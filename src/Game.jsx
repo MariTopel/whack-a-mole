@@ -17,14 +17,16 @@ export function GameProvider({ children }) {
     setScore(0); //resets the score by setting it to zero when you start the game over
     setCurrentHole(Math.floor(Math.random() * numberHoles)); //places mole in a random hole by generating a random number that is within the numberHoles value aka 0 <= x < numberHoles
     setIsPlaying(true); //reveals the board
+  
+function whack() {
+    if (!isPlaying) return;
+    setScore(prev => prev + 1)
+  let newHole; //variable holds the value of the new generated hole for comparison to old hole
+  do {
+    newHole = Math.floor(Math.random() * numberHoles); //creates the new hole value
+  } while (newHole === currentHole); //checks if the new hole value is the same as the old hole value. if it is the same then it repeats the pick
+  setCurrentHole(newHole);//updates the state of setCurrentHole to newHole if newHole is not equal to currentHole
   }
-
-  function whack(index) {
-    if (!isPlaying) return; // this stops people from clicking the holes before the game starts
-    setScore((s) => s + 1); //refreshes the score and ensures we ALWAYS get the latest score
-    setCurrentHole(Math.floor(Math.random() * numberHoles)); //moves the mole to a different hole but possible to be set to same hole if random number comes up the same
-  }
-
   function restart() {
     setIsPlaying(false); //takes you back to menu screen when done
   }
