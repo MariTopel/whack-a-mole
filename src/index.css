@@ -1,9 +1,33 @@
+.holes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
 
 .hole {
+  width: 120px;
+  height: 120px;
   background: url("/hole.png") no-repeat center/contain;
+  cursor: pointer;
+  position: relative;
+}
+
+/* temp to debug */
+.hole {
+  border: 2px solid hotpink;
+  background-color: rgba(255, 192, 203, 0.2);
 }
 
 .mole {
-  background-image: url("/mole.png");
+  width: 80px;
+  height: 80px;
+  background: url("/mole.png") no-repeat center/contain;
+  background-size: contain;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  pointer-events: none;
 }
-

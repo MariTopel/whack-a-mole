@@ -6,6 +6,12 @@ import Hole from "./Hole";
 export default function Board() {
   const { score, restart, numberHoles } = useGame();
 
+  console.log("game context:", game);
+
+  const { score, restart, numberHoles } = game;
+  console.log("numberHoles:", numberHoles);
+  console.log("holes array:", Array.from({ length: numberHoles }));
+
   return (
     <div className="game-board">
       <header>
