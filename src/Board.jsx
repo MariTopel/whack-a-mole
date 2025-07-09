@@ -5,7 +5,9 @@ import Hole from "./Hole";
 
 export default function Board() {
   // only one declaration of score here:
-  const { score, restart, numberHoles } = useGame();
+  const { score, restart, numberHoles, timeLeft } = useGame();
+
+  console.log("timeLeft:", timeLeft);
 
   return (
     <div className="game-board">
