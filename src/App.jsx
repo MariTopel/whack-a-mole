@@ -1,4 +1,4 @@
-//src/App.jsx
+// src/App.jsx
 import React from "react";
 import { GameProvider } from "./Game";
 import MainView from "./MainView";
