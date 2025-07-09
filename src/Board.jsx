@@ -13,6 +13,7 @@ export default function Board() {
     <div className="game-board">
       <header>
         <div>Score: {score}</div>
+        <div>Time: {timeLeft}</div>
         <button onClick={restart}>Restart</button>
       </header>
       <div className="holes-container">
